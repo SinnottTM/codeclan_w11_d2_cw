@@ -17,7 +17,7 @@ public class Bus {
     }
 
     public void addPassenger(BusStop busStop){
-        if (capacity > passenger.size()){
+        if (capacity > passenger.size() && busStop.getQueueLength() > 0){
             Person person = busStop.removePersonFromQueue();
             passenger.add(person);
         }
